@@ -8,6 +8,8 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.ugo.usuaddr.model.Tokens;
 import com.ugo.usuaddr.model.Usuario;
+import com.ugo.usuaddr.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ import java.time.ZoneOffset;
 
 @Service
 public class TokenService {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Value("${api.token.isuer}")
     private String tokenIsuer;
@@ -69,8 +74,9 @@ public class TokenService {
     }
 
     public Tokens renovarTokens(String refreshToken) {
-        String username = verificarToken(refreshToken, algorithmRefreshSecret);
-        return gerarTokens(new Usuario(username));
+        String email = verificarToken(refreshToken, algorithmRefreshSecret);
+        Usuario usuario = usuarioRepository.findByEmail(email).orElseThrow();
+        return gerarTokens(usuario);
     }
 
     public String verificarTokenAcesso(String tokenAcesso) {

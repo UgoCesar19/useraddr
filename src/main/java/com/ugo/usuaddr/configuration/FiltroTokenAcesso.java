@@ -1,6 +1,7 @@
 package com.ugo.usuaddr.configuration;
 
 import com.ugo.usuaddr.model.Usuario;
+import com.ugo.usuaddr.repository.UsuarioRepository;
 import com.ugo.usuaddr.service.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -14,12 +15,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Component
 public class FiltroTokenAcesso extends OncePerRequestFilter {
 
     @Autowired
     private TokenService tokenService;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -28,11 +33,13 @@ public class FiltroTokenAcesso extends OncePerRequestFilter {
 
         if (token != null) {
 
-            String username = tokenService.verificarTokenAcesso(token);
-            Usuario usuario = new Usuario(username);
+            String email = tokenService.verificarTokenAcesso(token);
+            Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
 
-            Authentication authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+            if (usuario.isPresent()) {
+                Authentication authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.get().getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
         }
 
         filterChain.doFilter(request, response);

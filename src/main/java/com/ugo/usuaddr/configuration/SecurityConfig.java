@@ -1,6 +1,7 @@
 package com.ugo.usuaddr.configuration;
 
 import com.ugo.usuaddr.model.Role;
+import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,20 +44,21 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
-                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(req -> {
-                    req.requestMatchers("/public/**", "/autenticar", "/atualizar-autenticacao", "/h2-console/**").permitAll();
+                    req.requestMatchers("/public/**", "/autenticar", "/atualizar-autenticacao").permitAll();
                     req.anyRequest().authenticated();
-                }).addFilterBefore(filtroTokenAcesso, UsernamePasswordAuthenticationFilter.class)
+                })
+                .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(filtroTokenAcesso, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
     @Bean
-    CommandLineRunner initDatabase(UsuarioRepository userRepository, PasswordEncoder encoder) {
+    CommandLineRunner createFirstAdmin(UsuarioRepository userRepository, PasswordEncoder encoder) {
         return args -> {
-            Role adminRole = new Role("ROLE_ADMIN");
+            Role adminRole = new Role(RoleName.ROLE_ADMIN);
 
-            Usuario admin = new Usuario(null, "admin@email.com", encoder.encode("admin123"), "Administrador das Couves", Set.of(adminRole));
+            Usuario admin = new Usuario(null, "admin@email.com", encoder.encode("admin123"), "Administrador das Couves", Set.of(adminRole), null);
             userRepository.save(admin);
         };
     }

@@ -323,3 +323,286 @@ insert into users (email,nome,password,id) values (?,?,?,default) [23502-232]
 29-May-2025 20:01:31.026 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [3.647] ms
 29-May-2025 20:01:31.027 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 29-May-2025 20:01:31.032 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [3682] milliseconds
+29-May-2025 20:08:57.646 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:08:57.648 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 20:08:57.695 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:08:57.703 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:09:01.574 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 20:09:01.577 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 20:09:01.578 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 20:09:01.582 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 20:09:01.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 20:09:01.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 20:09:01.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 20:09:01.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/lib/idea_rt.jar=41665
+29-May-2025 20:09:01.583 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 20:09:01.584 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 20:09:01.717 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:09:01.724 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [403] milliseconds
+29-May-2025 20:09:01.742 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 20:09:01.742 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 20:09:01.745 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 20:09:02.693 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 20:09:05.198 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [3.452] ms
+29-May-2025 20:09:05.199 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:09:05.205 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [3480] milliseconds
+29-May-2025 20:11:59.450 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:11:59.453 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 20:11:59.510 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:11:59.515 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:12:03.170 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 20:12:03.174 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:45405,suspend=y,server=n
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/plugins/java/lib/rt/debugger-agent.jar=file:///tmp/capture17749600027171641348.props
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true
+29-May-2025 20:12:03.179 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 20:12:03.180 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 20:12:03.441 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:12:03.467 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [384] milliseconds
+29-May-2025 20:12:03.507 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 20:12:03.508 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 20:12:03.522 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 20:12:04.532 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 20:12:07.672 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.150] ms
+29-May-2025 20:12:07.674 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:12:07.680 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4212] milliseconds
+29-May-2025 20:28:42.291 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:28:42.296 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 20:28:42.350 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 20:28:42.359 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:11:15.277 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 21:11:15.279 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 21:11:15.279 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 21:11:15.279 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 21:11:15.280 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:11:15.284 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 21:11:15.284 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 21:11:15.284 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 21:11:15.284 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/lib/idea_rt.jar=42101
+29-May-2025 21:11:15.285 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 21:11:15.286 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 21:11:15.443 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:11:15.463 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [483] milliseconds
+29-May-2025 21:11:15.497 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 21:11:15.497 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 21:11:15.502 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 21:11:16.636 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 21:11:19.537 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.033] ms
+29-May-2025 21:11:19.539 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:11:19.544 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4081] milliseconds
+29-May-2025 21:14:49.411 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:14:49.414 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 21:14:49.477 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:14:49.490 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:14:51.927 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 21:14:51.933 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 21:14:51.934 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 21:14:51.934 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 21:14:51.934 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:14:51.940 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 21:14:51.940 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 21:14:51.940 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 21:14:51.940 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:58311,suspend=y,server=n
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/plugins/java/lib/rt/debugger-agent.jar=file:///tmp/capture8115974130931566958.props
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true
+29-May-2025 21:14:51.941 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 21:14:51.942 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 21:14:52.093 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:14:52.112 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [309] milliseconds
+29-May-2025 21:14:52.142 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 21:14:52.142 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 21:14:52.152 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 21:14:53.242 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 21:14:56.906 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.752] ms
+29-May-2025 21:14:56.910 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:14:56.925 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4812] milliseconds
+29-May-2025 21:20:30.994 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:20:30.999 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 21:20:31.060 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:20:31.066 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:21:35.424 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 21:21:35.426 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 21:21:35.427 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 21:21:35.427 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 21:21:35.427 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 21:21:35.427 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/lib/idea_rt.jar=41597
+29-May-2025 21:21:35.431 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 21:21:35.432 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 21:21:35.562 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:21:35.571 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [278] milliseconds
+29-May-2025 21:21:35.599 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 21:21:35.599 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 21:21:35.606 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 21:21:36.805 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 21:21:39.823 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.216] ms
+29-May-2025 21:21:39.826 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:21:39.832 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4260] milliseconds
+29-May-2025 21:23:49.534 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:23:49.536 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 21:23:49.591 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 21:23:49.602 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:06:26.964 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 23:06:26.969 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 23:06:26.970 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 23:06:26.970 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 23:06:26.970 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 23:06:26.975 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:33125,suspend=y,server=n
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/plugins/java/lib/rt/debugger-agent.jar=file:///tmp/capture8049757474538426701.props
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+29-May-2025 23:06:26.976 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true
+29-May-2025 23:06:26.977 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true
+29-May-2025 23:06:26.977 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 23:06:26.978 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 23:06:27.171 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:06:27.184 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [326] milliseconds
+29-May-2025 23:06:27.207 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 23:06:27.207 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 23:06:27.212 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 23:06:28.185 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 23:06:31.286 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.072] ms
+29-May-2025 23:06:31.288 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:06:31.302 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4117] milliseconds
+29-May-2025 23:12:13.262 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:12:13.268 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 23:12:13.328 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:12:13.335 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:12:15.844 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.41
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 8 2025 12:44:02 UTC
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.41.0
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-59-generic
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /home/ugocesar19/.jdks/corretto-17.0.13
+29-May-2025 23:12:15.847 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+11-LTS
+29-May-2025 23:12:15.848 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+29-May-2025 23:12:15.848 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/ugocesar19/desenv/useraddr
+29-May-2025 23:12:15.848 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:59437,suspend=y,server=n
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/609/plugins/java/lib/rt/debugger-agent.jar=file:///tmp/capture1836220511345232177.props
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/ugocesar19/desenv/apache-tomcat-10.1.41
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/ugocesar19/desenv/useraddr
+29-May-2025 23:12:15.855 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/ugocesar19/desenv/useraddr/temp
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/ugocesar19/desenv/useraddr/conf/logging.properties
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Ddebugger.agent.enable.coroutines=true
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true
+29-May-2025 23:12:15.856 INFORMAÇÕES [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-May-2025 23:12:15.857 INFORMAÇÕES [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+29-May-2025 23:12:16.005 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:12:16.019 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.load Server initialization in [306] milliseconds
+29-May-2025 23:12:16.041 INFORMAÇÕES [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-May-2025 23:12:16.041 INFORMAÇÕES [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.41]
+29-May-2025 23:12:16.047 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml]
+29-May-2025 23:12:17.022 INFORMAÇÕES [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-May-2025 23:12:20.630 INFORMAÇÕES [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/ugocesar19/desenv/useraddr/conf/Catalina/localhost/usuaddr.xml] has finished in [4.581] ms
+29-May-2025 23:12:20.633 INFORMAÇÕES [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:12:20.640 INFORMAÇÕES [main] org.apache.catalina.startup.Catalina.start Server startup in [4620] milliseconds
+29-May-2025 23:22:33.983 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:22:33.988 INFORMAÇÕES [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-May-2025 23:22:34.052 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-May-2025 23:22:34.064 INFORMAÇÕES [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

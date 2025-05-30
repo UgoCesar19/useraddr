@@ -1,6 +1,7 @@
 package com.ugo.usuaddr.repository;
 
 import com.ugo.usuaddr.model.Role;
+import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,9 @@ public class UsuarioRepositoryTest {
     @Test
     public void itShouldInsertAndLoadAnUsuarioIntoTheUsersTable() {
 
-        Role role = new Role("ROLE_MATUTO");
+        Role role = new Role(RoleName.ROLE_USER);
 
-        Usuario usuario = new Usuario(null, "matuto@email.com", passwordEncoder.encode("matuto123"), "Matuto", Set.of(role));
+        Usuario usuario = new Usuario(null, "matuto@email.com", passwordEncoder.encode("matuto123"), "Matuto", Set.of(role), null);
         usuarioRepository.save(usuario);
 
         Optional<Usuario> usuarioEncontrado = usuarioRepository.findByEmail("matuto@email.com");

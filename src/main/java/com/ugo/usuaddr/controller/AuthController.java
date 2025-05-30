@@ -26,22 +26,8 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
     @PostMapping("/autenticar")
     public ResponseEntity<Tokens> autenticar(@RequestBody Credenciais credenciais) {
-
-        Optional<Usuario> usuarioEncontrado = usuarioRepository.findByEmail(credenciais.getUsuario());
-
-        String senhaEnviada = passwordEncoder.encode(credenciais.getSenha());
-
-        System.out.println(senhaEnviada);
-
-        System.out.println(usuarioEncontrado.toString());
 
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(credenciais.getUsuario(), credenciais.getSenha());
         Authentication authentication = authenticationManager.authenticate(authenticationToken);

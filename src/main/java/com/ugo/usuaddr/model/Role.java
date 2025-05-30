@@ -15,10 +15,11 @@ public class Role implements GrantedAuthority {
 
     @Id
     @Column(name = "role_name")
-    private String authority;
+    @Enumerated(EnumType.STRING)
+    private RoleName authority;
 
     @Override
     public String getAuthority() {
-        return authority;
+        return authority.name();
     }
 }
