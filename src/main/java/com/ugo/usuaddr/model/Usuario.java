@@ -25,7 +25,7 @@ public class Usuario implements UserDetails {
     @Column(unique = true)
     private String email;
 
-    private String password;
+    private String senha;
 
     private String nome;
 
@@ -37,8 +37,15 @@ public class Usuario implements UserDetails {
     )
     private Set<Role> authorities;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Endereco> enderecos;
+
+    public Usuario(String email, String senha, String nome, RoleName roleName) {
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
+        this.authorities = Set.of(new Role(roleName));
+    }
 
     @Override
     public
@@ -48,7 +55,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return senha;
     }
 
     @Override

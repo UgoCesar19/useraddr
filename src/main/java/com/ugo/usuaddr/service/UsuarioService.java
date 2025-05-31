@@ -3,7 +3,7 @@ package com.ugo.usuaddr.service;
 import com.ugo.usuaddr.model.Role;
 import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
-import com.ugo.usuaddr.model.UsuarioDto;
+import com.ugo.usuaddr.dto.UsuarioDto;
 import com.ugo.usuaddr.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +33,7 @@ public class UsuarioService implements UserDetailsService {
 
         Usuario usuario = usuarioRepository.save(Usuario.builder()
                 .email(usuarioDto.getEmail())
-                .password(passwordEncoder.encode(usuarioDto.getPassword()))
+                .senha(passwordEncoder.encode(usuarioDto.getSenha()))
                 .nome(usuarioDto.getNome())
                 .authorities(Set.of(new Role(RoleName.ROLE_USER)))
                 .build());

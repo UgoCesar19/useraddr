@@ -1,9 +1,8 @@
 package com.ugo.usuaddr.controller;
 
-import com.ugo.usuaddr.model.Usuario;
-import com.ugo.usuaddr.model.UsuarioDto;
-import com.ugo.usuaddr.repository.UsuarioRepository;
+import com.ugo.usuaddr.dto.UsuarioDto;
 import com.ugo.usuaddr.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping
-    public ResponseEntity<UsuarioDto> cadastrar(@RequestBody UsuarioDto usuarioDto) {
+    public ResponseEntity<UsuarioDto> cadastrar(@RequestBody @Valid UsuarioDto usuarioDto) {
         return new ResponseEntity<>(usuarioService.cadastrar(usuarioDto), HttpStatus.OK);
     }
 

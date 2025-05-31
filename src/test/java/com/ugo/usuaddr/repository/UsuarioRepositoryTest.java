@@ -1,6 +1,5 @@
 package com.ugo.usuaddr.repository;
 
-import com.ugo.usuaddr.model.Role;
 import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Optional;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,9 +25,11 @@ public class UsuarioRepositoryTest {
     @Test
     public void itShouldInsertAndLoadAnUsuarioIntoTheUsersTable() {
 
-        Role role = new Role(RoleName.ROLE_USER);
+        Usuario usuario = new Usuario(
+                "matuto@email.com",
+                passwordEncoder.encode("matuto123"),
+                "Matuto", RoleName.ROLE_USER);
 
-        Usuario usuario = new Usuario(null, "matuto@email.com", passwordEncoder.encode("matuto123"), "Matuto", Set.of(role), null);
         usuarioRepository.save(usuario);
 
         Optional<Usuario> usuarioEncontrado = usuarioRepository.findByEmail("matuto@email.com");

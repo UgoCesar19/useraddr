@@ -6,6 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.ugo.usuaddr.exception.RefreshTokenException;
 import com.ugo.usuaddr.model.Tokens;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.repository.UsuarioRepository;
@@ -49,17 +50,16 @@ public class TokenService {
     }
 
     public String verificarToken(String token, String secret) {
-        DecodedJWT decodedJWT;
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             JWTVerifier verifier = JWT.require(algorithm)
                     .withIssuer(tokenIsuer)
                     .build();
 
-            decodedJWT = verifier.verify(token);
+            DecodedJWT decodedJWT = verifier.verify(token);
             return decodedJWT.getSubject();
         } catch (JWTVerificationException exception) {
-            throw new RuntimeException("Erro ao verificar token JWT!");
+            throw new RefreshTokenException("Erro ao verificar token JWT!");
         }
     }
 

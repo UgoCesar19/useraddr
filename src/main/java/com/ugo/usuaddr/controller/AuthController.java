@@ -1,21 +1,18 @@
 package com.ugo.usuaddr.controller;
 
-import com.ugo.usuaddr.model.Credenciais;
+import com.ugo.usuaddr.dto.CredenciaisDto;
 import com.ugo.usuaddr.model.Tokens;
 import com.ugo.usuaddr.model.Usuario;
-import com.ugo.usuaddr.repository.UsuarioRepository;
 import com.ugo.usuaddr.service.TokenService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Optional;
 
 @RestController
 public class AuthController {
@@ -27,9 +24,9 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping("/autenticar")
-    public ResponseEntity<Tokens> autenticar(@RequestBody Credenciais credenciais) {
+    public ResponseEntity<Tokens> autenticar(@RequestBody @Valid CredenciaisDto credenciaisDto) {
 
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(credenciais.getUsuario(), credenciais.getSenha());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(credenciaisDto.getEmail(), credenciaisDto.getSenha());
         Authentication authentication = authenticationManager.authenticate(authenticationToken);
 
         return ResponseEntity.ok(tokenService.gerarTokens((Usuario) authentication.getPrincipal()));

@@ -59,6 +59,7 @@
     <PostResources base="/home/ugocesar19/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/checker-qual-3.48.3.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/lombok-1.18.38.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.annotation-api-2.1.1.jar"/>
+    <PostResources base="/home/ugocesar19/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.41/tomcat-embed-el-10.1.41.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/tomcat-embed-el-10.1.41.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.xml.bind-api-4.0.2.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.activation-api-2.1.3.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/org/springframework/spring-core/6.2.7/spring-core-6.2.7.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/spring-core-6.2.7.jar"/>
@@ -69,5 +70,8 @@
     <PostResources base="/home/ugocesar19/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.0/jackson-databind-2.19.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jackson-databind-2.19.0.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.0/jackson-annotations-2.19.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jackson-annotations-2.19.0.jar"/>
     <PostResources base="/home/ugocesar19/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.0/jackson-core-2.19.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jackson-core-2.19.0.jar"/>
+    <PostResources base="/home/ugocesar19/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.5.0/spring-boot-starter-validation-3.5.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/spring-boot-starter-validation-3.5.0.jar"/>
+    <PostResources base="/home/ugocesar19/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/hibernate-validator-8.0.2.Final.jar"/>
+    <PostResources base="/home/ugocesar19/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.validation-api-3.0.2.jar"/>
   </Resources>
 </Context>
