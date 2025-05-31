@@ -1,18 +1,16 @@
 package com.ugo.usuaddr.service;
 
-import com.ugo.usuaddr.model.Role;
-import com.ugo.usuaddr.model.RoleName;
+import com.ugo.usuaddr.helper.UsuarioMapper;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.dto.UsuarioDto;
 import com.ugo.usuaddr.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Set;
 
 @Service
 public class UsuarioService implements UserDetailsService {
@@ -21,28 +19,29 @@ public class UsuarioService implements UserDetailsService {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
+    private UsuarioMapper usuarioMapper;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return usuarioRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
     }
 
     public UsuarioDto cadastrar(UsuarioDto usuarioDto) {
-
-        Usuario usuario = usuarioRepository.save(Usuario.builder()
-                .email(usuarioDto.getEmail())
-                .senha(passwordEncoder.encode(usuarioDto.getSenha()))
-                .nome(usuarioDto.getNome())
-                .authorities(Set.of(new Role(RoleName.ROLE_USER)))
-                .build());
-
-        return UsuarioDto.builder()
-                .id(usuario.getId())
-                .email(usuario.getEmail())
-                .nome(usuario.getNome())
-                .build();
-
+        Usuario usuario = usuarioRepository.save(usuarioMapper.toEntity(usuarioDto));
+        return usuarioMapper.toDto(usuario);
     }
+
+    public UsuarioDto alterar(UsuarioDto usuarioDto) {
+        return null;
+    }
+
+    public String apagar(UsuarioDto usuarioDto) {
+        return null;
+    }
+
+    public Page<UsuarioDto> getUsuarios(Pageable pageable) {
+        return null;
+    }
+
 }

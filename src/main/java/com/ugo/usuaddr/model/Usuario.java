@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Data
@@ -35,22 +36,23 @@ public class Usuario implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Set<Role> authorities;
+    private Set<Role> perfis;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Endereco> enderecos;
 
-    public Usuario(String email, String senha, String nome, RoleName roleName) {
+    private LocalDateTime dataCriacao;
+
+    public Usuario(String email, String senha, String nome) {
         this.email = email;
         this.senha = senha;
         this.nome = nome;
-        this.authorities = Set.of(new Role(roleName));
     }
 
     @Override
     public
     Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        return perfis;
     }
 
     @Override
@@ -61,6 +63,12 @@ public class Usuario implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.dataCriacao = LocalDateTime.now();
+        this.perfis = Set.of(new Role(RoleName.ROLE_USER));
     }
 
 }

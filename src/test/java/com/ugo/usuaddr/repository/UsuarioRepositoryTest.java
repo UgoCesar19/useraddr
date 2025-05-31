@@ -1,6 +1,5 @@
 package com.ugo.usuaddr.repository;
 
-import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,7 @@ public class UsuarioRepositoryTest {
         Usuario usuario = new Usuario(
                 "matuto@email.com",
                 passwordEncoder.encode("matuto123"),
-                "Matuto", RoleName.ROLE_USER);
+                "Matuto");
 
         usuarioRepository.save(usuario);
 
