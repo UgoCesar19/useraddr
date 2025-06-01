@@ -60,6 +60,9 @@ public class SecurityConfig {
                                        PasswordEncoder encoder) {
         return args -> {
 
+            usuarioRepository.deleteAll();
+            roleRepository.deleteAll();
+
             Role roleAdmin = roleRepository.save(Role.builder().authority(RoleName.ROLE_ADMIN).build());
             roleRepository.save(Role.builder().authority(RoleName.ROLE_USER).build());
 
