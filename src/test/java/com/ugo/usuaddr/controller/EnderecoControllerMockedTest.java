@@ -1,10 +1,11 @@
 package com.ugo.usuaddr.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ugo.usuaddr.dto.UsuarioDto;
+import com.ugo.usuaddr.dto.EnderecoDto;
+import com.ugo.usuaddr.repository.EnderecoRepository;
 import com.ugo.usuaddr.repository.UsuarioRepository;
+import com.ugo.usuaddr.service.EnderecoService;
 import com.ugo.usuaddr.service.TokenService;
-import com.ugo.usuaddr.service.UsuarioService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,11 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(UsuarioController.class)
-public class UsuarioControllerMockedTest {
+@WebMvcTest(EnderecoController.class)
+public class EnderecoControllerMockedTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -37,7 +39,7 @@ public class UsuarioControllerMockedTest {
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private UsuarioService usuarioService;
+    private EnderecoService enderecoService;
 
     @MockitoBean
     private TokenService tokenService;
@@ -45,22 +47,29 @@ public class UsuarioControllerMockedTest {
     @MockitoBean
     private UsuarioRepository usuarioRepository;
 
+    @MockitoBean
+    private EnderecoRepository enderecoRepository;
+
     @WithMockUser("matuto")
     @Test
-    void whenCadastrarMethodIsCalled_thenReturnUsuarioDto() throws Exception {
-        UsuarioDto input = UsuarioDto.builder()
-                .email("matuto@mail.com")
-                .senha("matuto123")
-                .nome("Matuto")
+    void whenPersistirMethodIsCalled_thenReturnEnderecoDto() throws Exception {
+        EnderecoDto input = EnderecoDto.builder()
+                .logradouro("teste")
+                .numero("teste")
+                .complemento("teste")
+                .bairro("teste")
+                .cidade("teste")
+                .estado("teste")
+                .cep("teste")
                 .build();
 
-        UsuarioDto output = UsuarioDto.builder()
+        EnderecoDto output = EnderecoDto.builder()
                 .id(1L)
                 .build();
 
-        when(usuarioService.cadastrar(any(UsuarioDto.class))).thenReturn(output);
+        when(enderecoService.persistir(input, 1L)).thenReturn(output);
 
-        mockMvc.perform(post("/usuarios")
+        mockMvc.perform(post("/enderecos/1")
                         .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(input)))
@@ -71,73 +80,57 @@ public class UsuarioControllerMockedTest {
 
     @WithMockUser("matuto")
     @Test
-    void whenAlterarMethodIsCalled_thenReturnUsuarioDto() throws Exception {
-        UsuarioDto input = UsuarioDto.builder()
-                .email("matuto@mail.com")
-                .senha("matuto123")
-                .nome("Matuto")
+    void whenPersistirMethodIsCalledUsingIdOnDto_thenReturnUpdatedEnderecoDto() throws Exception {
+        EnderecoDto input = EnderecoDto.builder()
+                .id(2L)
+                .logradouro("teste")
+                .numero("teste")
+                .complemento("teste")
+                .bairro("teste")
+                .cidade("teste")
+                .estado("teste")
+                .cep("teste")
                 .build();
 
-        UsuarioDto output = UsuarioDto.builder()
-                .id(1L)
+        EnderecoDto output = EnderecoDto.builder()
+                .id(2L)
                 .build();
 
-        when(usuarioService.cadastrar(any(UsuarioDto.class))).thenReturn(output);
+        when(enderecoService.persistir(input, 2L)).thenReturn(output);
 
-        mockMvc.perform(post("/usuarios")
+        mockMvc.perform(post("/enderecos/2")
                         .with(csrf())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(input)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1L));
+                .andExpect(jsonPath("$.id").value(2L));
 
-        UsuarioDto input2 = UsuarioDto.builder()
-                .id(1L)
-                .email("matuto2@mail.com")
-                .senha("matuto123")
-                .nome("Matuto2")
-                .build();
-
-        UsuarioDto output2 = UsuarioDto.builder()
-                .id(1L)
-                .nome("Matuto2")
-                .build();
-
-        when(usuarioService.alterar(input2)).thenReturn(output2);
-
-        mockMvc.perform(put("/usuarios")
-                        .with(csrf())
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(input2)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1L))
-                .andExpect(jsonPath("$.nome").value("Matuto2"));
     }
 
     @WithMockUser("matuto")
     @Test
-    void whenGetUsuariosMethodIsCalled_thenReturnAnUsuarioDtoList() throws Exception {
+    void whenGetEnderecosMethodIsCalled_thenReturnAnEnderecoDtoList() throws Exception {
 
-        UsuarioDto input1 = UsuarioDto.builder().build();
-        UsuarioDto input2 = UsuarioDto.builder().build();
-        Page<UsuarioDto> output = new PageImpl<>(Arrays.asList(input1, input2));
+        EnderecoDto input1 = EnderecoDto.builder().build();
+        EnderecoDto input2 = EnderecoDto.builder().build();
+        Page<EnderecoDto> output = new PageImpl<>(Arrays.asList(input1, input2));
 
-        when(usuarioService.getUsuarios(any())).thenReturn(output);
+        when(enderecoService.getEnderecos(any())).thenReturn(output);
 
-        mockMvc.perform(get("/usuarios")
+        mockMvc.perform(get("/enderecos")
                         .with(csrf())
                         .param("page", "0")
                         .param("size", "10")
-                        .param("sort", "nome,asc"))
+                        .param("sort", "logradouro,asc"))
                 .andExpect(status().isOk());
 
         ArgumentCaptor<Pageable> captor = ArgumentCaptor.forClass(Pageable.class);
-        verify(usuarioService).getUsuarios(captor.capture());
+        verify(enderecoService).getEnderecos(captor.capture());
 
         Pageable passedPageable = captor.getValue();
         assertEquals(0, passedPageable.getPageNumber());
         assertEquals(10, passedPageable.getPageSize());
-        assertEquals(Sort.by("nome").ascending(), passedPageable.getSort());
+        assertEquals(Sort.by("logradouro").ascending(), passedPageable.getSort());
 
     }
 
@@ -146,13 +139,13 @@ public class UsuarioControllerMockedTest {
     void whenApagarMethodIsCalled_thenReturnOk() throws Exception {
         Long id = 1L;
 
-        doNothing().when(usuarioService).apagar(id);
+        doNothing().when(enderecoService).apagar(id);
 
-        mockMvc.perform(delete("/usuarios/{id}", id)
+        mockMvc.perform(delete("/enderecos/{id}", id)
                         .with(csrf()))
                 .andExpect(status().isOk());
 
-        verify(usuarioService, times(1)).apagar(id);
+        verify(enderecoService, times(1)).apagar(id);
 
     }
 
