@@ -6,7 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.ugo.usuaddr.exception.RefreshTokenException;
+import com.ugo.usuaddr.exception.TokenException;
 import com.ugo.usuaddr.model.Tokens;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.repository.UsuarioRepository;
@@ -45,7 +45,7 @@ public class TokenService {
                     .withExpiresAt(expiracao(expiration))
                     .sign(algorithm);
         } catch (JWTCreationException exception) {
-            throw new RuntimeException("Erro ao gerar token JWT!");
+            throw new RuntimeException("Erro ao gerar token de acesso!");
         }
     }
 
@@ -59,7 +59,7 @@ public class TokenService {
             DecodedJWT decodedJWT = verifier.verify(token);
             return decodedJWT.getSubject();
         } catch (JWTVerificationException exception) {
-            throw new RefreshTokenException("Erro ao verificar token JWT!");
+            throw new TokenException("Erro ao verificar token de acesso!");
         }
     }
 

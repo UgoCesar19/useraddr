@@ -30,7 +30,7 @@ public class Usuario implements UserDetails {
 
     private String nome;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -42,12 +42,6 @@ public class Usuario implements UserDetails {
     private List<Endereco> enderecos;
 
     private LocalDateTime dataCriacao;
-
-    public Usuario(String email, String senha, String nome) {
-        this.email = email;
-        this.senha = senha;
-        this.nome = nome;
-    }
 
     @Override
     public
@@ -68,7 +62,6 @@ public class Usuario implements UserDetails {
     @PrePersist
     protected void onCreate() {
         this.dataCriacao = LocalDateTime.now();
-        this.perfis = Set.of(new Role(RoleName.ROLE_USER));
     }
 
 }

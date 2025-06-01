@@ -1,15 +1,15 @@
 package com.ugo.usuaddr.controller;
 
-import com.ugo.usuaddr.exception.RefreshTokenException;
+import com.ugo.usuaddr.exception.UniqueEmailException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestControllerAdvice
 public class InterceptaErros {
@@ -19,20 +19,31 @@ public class InterceptaErros {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> handleValidationErrors(MethodArgumentNotValidException ex) {
-
-        Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getFieldErrors().forEach(error ->
-                errors.put(error.getField(), error.getDefaultMessage())
-        );
-
-        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<String> acessoNegado(AccessDeniedException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
     }
 
-    @ExceptionHandler(RefreshTokenException.class)
-    public ResponseEntity<String> atualizaAutenticacao(RefreshTokenException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> dadosInvalidos(MethodArgumentNotValidException ex) {
+        var erros = ex.getFieldErrors();
+        return ResponseEntity.badRequest().body(erros.stream().map(DadosErroValidacao::new).toList());
+    }
+
+    @ExceptionHandler(UniqueEmailException.class)
+    public ResponseEntity<?> emailEmUso(UniqueEmailException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<?> recursoNaoEncontrado(EntityNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    private record DadosErroValidacao(String campo, String mensagem) {
+        public DadosErroValidacao(FieldError erro) {
+            this(erro.getField(), erro.getDefaultMessage());
+        }
     }
 
 }

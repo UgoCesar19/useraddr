@@ -27,14 +27,15 @@ public class UsuarioController {
         return new ResponseEntity<>(usuarioService.cadastrar(usuarioDto), HttpStatus.OK);
     }
 
-    @PutMapping(path = "/{id}")
-    public ResponseEntity<UsuarioDto> cadastrar(@PathVariable("id") Long id, @RequestBody @Valid UsuarioDto usuarioDto) {
+    @PutMapping
+    public ResponseEntity<UsuarioDto> alterar(@RequestBody @Valid UsuarioDto usuarioDto) {
         return new ResponseEntity<>(usuarioService.alterar(usuarioDto), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<String> apagar(@PathVariable("id") Long id, @RequestBody @Valid UsuarioDto usuarioDto) {
-        return new ResponseEntity<>(usuarioService.apagar(usuarioDto), HttpStatus.OK);
+    public ResponseEntity<Void> apagar(@PathVariable("id") Long id) {
+        usuarioService.apagar(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

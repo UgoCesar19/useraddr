@@ -1,6 +1,9 @@
 package com.ugo.usuaddr.configuration;
 
+import com.ugo.usuaddr.model.Role;
+import com.ugo.usuaddr.model.RoleName;
 import com.ugo.usuaddr.model.Usuario;
+import com.ugo.usuaddr.repository.RoleRepository;
 import com.ugo.usuaddr.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -52,13 +55,21 @@ public class SecurityConfig {
     }
 
     @Bean
-    CommandLineRunner createFirstAdmin(UsuarioRepository userRepository, PasswordEncoder encoder) {
+    CommandLineRunner createFirstAdmin(UsuarioRepository usuarioRepository,
+                                       RoleRepository roleRepository,
+                                       PasswordEncoder encoder) {
         return args -> {
-            Usuario admin = new Usuario(
-                    "admin@email.com",
-                    encoder.encode("admin123"),
-                    "Administrador das Couves");
-            userRepository.save(admin);
+
+            Role roleAdmin = roleRepository.save(Role.builder().authority(RoleName.ROLE_ADMIN).build());
+            roleRepository.save(Role.builder().authority(RoleName.ROLE_USER).build());
+
+            Usuario admin = Usuario.builder()
+                    .email("admin@email.com")
+                    .senha(encoder.encode("admin123"))
+                    .nome("Administrador das Couves")
+                    .perfis(Set.of(roleAdmin))
+                    .build();
+            usuarioRepository.save(admin);
         };
     }
 

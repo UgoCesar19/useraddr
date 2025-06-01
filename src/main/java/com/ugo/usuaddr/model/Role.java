@@ -2,6 +2,7 @@ package com.ugo.usuaddr.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 @Entity
 @Table(name = "roles")
 public class Role implements GrantedAuthority {
@@ -20,10 +22,6 @@ public class Role implements GrantedAuthority {
     @Column(name = "role_name")
     @Enumerated(EnumType.STRING)
     private RoleName authority;
-
-    public Role(RoleName roleName) {
-        this.authority = roleName;
-    }
 
     @Override
     public String getAuthority() {

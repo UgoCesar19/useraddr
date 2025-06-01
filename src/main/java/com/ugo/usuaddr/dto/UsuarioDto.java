@@ -1,6 +1,7 @@
 package com.ugo.usuaddr.dto;
 
 import com.ugo.usuaddr.model.Role;
+import com.ugo.usuaddr.validation.UniqueEmail;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@UniqueEmail
 public class UsuarioDto {
 
     private Long id;

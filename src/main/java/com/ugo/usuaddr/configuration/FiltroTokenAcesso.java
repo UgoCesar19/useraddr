@@ -36,10 +36,9 @@ public class FiltroTokenAcesso extends OncePerRequestFilter {
             String email = tokenService.verificarTokenAcesso(token);
             Optional<Usuario> usuario = usuarioRepository.findByEmail(email);
 
-            if (usuario.isPresent()) {
-                Authentication authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.get().getAuthorities());
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            }
+            Authentication authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.get().getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
         }
 
         filterChain.doFilter(request, response);

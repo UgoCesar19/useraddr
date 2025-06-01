@@ -4,6 +4,8 @@ import com.ugo.usuaddr.helper.UsuarioMapper;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.dto.UsuarioDto;
 import com.ugo.usuaddr.repository.UsuarioRepository;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,21 +29,34 @@ public class UsuarioService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
     }
 
+    public Page<UsuarioDto> getUsuarios(Pageable pageable) {
+        return usuarioRepository.findAll(pageable).map(u -> {
+            return usuarioMapper.toDto(u);
+        });
+    }
+
+    @Transactional
     public UsuarioDto cadastrar(UsuarioDto usuarioDto) {
-        Usuario usuario = usuarioRepository.save(usuarioMapper.toEntity(usuarioDto));
+        Usuario usuario = usuarioRepository.save(usuarioMapper.toSave(usuarioDto));
         return usuarioMapper.toDto(usuario);
     }
 
+    @Transactional
     public UsuarioDto alterar(UsuarioDto usuarioDto) {
-        return null;
+        Usuario usuario = usuarioRepository.save(usuarioMapper.toUpdate(usuarioDto,
+                encontraUsuario(usuarioDto.getId())));
+        return usuarioMapper.toDto(usuario);
     }
 
-    public String apagar(UsuarioDto usuarioDto) {
-        return null;
+    @Transactional
+    public void apagar(Long id) {
+        usuarioRepository.delete(encontraUsuario(id));
     }
 
-    public Page<UsuarioDto> getUsuarios(Pageable pageable) {
-        return null;
+    private Usuario encontraUsuario(Long id) {
+        return usuarioRepository.findById(id).orElseThrow(() -> {
+            return new EntityNotFoundException("Usuário com ID " + id + " não encontrado!");
+        });
     }
 
 }
