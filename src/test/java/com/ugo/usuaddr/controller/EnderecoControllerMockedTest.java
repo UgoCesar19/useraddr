@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ugo.usuaddr.dto.EnderecoDto;
 import com.ugo.usuaddr.repository.EnderecoRepository;
 import com.ugo.usuaddr.repository.UsuarioRepository;
+import com.ugo.usuaddr.rest.ViaCepClient;
 import com.ugo.usuaddr.service.EnderecoService;
 import com.ugo.usuaddr.service.TokenService;
+import com.ugo.usuaddr.service.ViaCepService;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,9 +52,15 @@ public class EnderecoControllerMockedTest {
     @MockitoBean
     private EnderecoRepository enderecoRepository;
 
+    @MockitoBean
+    private ViaCepService viaCepService;
+
     @WithMockUser("matuto")
     @Test
     void whenPersistirMethodIsCalled_thenReturnEnderecoDto() throws Exception {
+
+        when(viaCepService.isValid(any())).thenReturn(true);
+
         EnderecoDto input = EnderecoDto.builder()
                 .logradouro("teste")
                 .numero("teste")
@@ -81,6 +89,9 @@ public class EnderecoControllerMockedTest {
     @WithMockUser("matuto")
     @Test
     void whenPersistirMethodIsCalledUsingIdOnDto_thenReturnUpdatedEnderecoDto() throws Exception {
+
+        when(viaCepService.isValid(any())).thenReturn(true);
+
         EnderecoDto input = EnderecoDto.builder()
                 .id(2L)
                 .logradouro("teste")
