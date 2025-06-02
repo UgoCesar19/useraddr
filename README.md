@@ -48,7 +48,7 @@ Nothing to configure. Just run the application.
 
 #### b. **PostgreSQL Database**
 
-Create an docker container for the database:
+Create a docker container for the database:
 
 ```bash
 docker run --name useraddr-postgres -e POSTGRES_DB=useraddr_db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres:15
