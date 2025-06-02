@@ -36,7 +36,10 @@ public class Usuario implements UserDetails {
     private Set<Role> perfis;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "usuario",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER)
     private List<Endereco> enderecos;
 
     private LocalDateTime dataCriacao;

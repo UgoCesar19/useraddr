@@ -3,6 +3,7 @@ package com.ugo.usuaddr.service;
 import com.ugo.usuaddr.dto.EnderecoDto;
 import com.ugo.usuaddr.helper.EnderecoMapper;
 import com.ugo.usuaddr.model.Endereco;
+import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.repository.EnderecoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -34,7 +35,9 @@ public class EnderecoService {
 
     @Transactional
     public void apagar(Long id) {
-        enderecoRepository.delete(encontraEndereco(id));
+        Endereco endereco = encontraEndereco(id);
+        Usuario usuario = endereco.getUsuario();
+        usuario.getEnderecos().remove(endereco);
     }
 
     private Endereco encontraEndereco(Long id) {
