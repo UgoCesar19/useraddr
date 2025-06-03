@@ -1,11 +1,14 @@
 package com.ugo.usuaddr.controller;
 
 import com.ugo.usuaddr.dto.CredenciaisDto;
+import com.ugo.usuaddr.dto.UsuarioDto;
 import com.ugo.usuaddr.model.Tokens;
 import com.ugo.usuaddr.model.Usuario;
 import com.ugo.usuaddr.service.TokenService;
+import com.ugo.usuaddr.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,6 +26,9 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private UsuarioService usuarioService;
+
     @PostMapping("/autenticar")
     public ResponseEntity<Tokens> autenticar(@RequestBody @Valid CredenciaisDto credenciaisDto) {
 
@@ -36,4 +42,11 @@ public class AuthController {
     public ResponseEntity<Tokens> atualizaAutenticacao(@RequestBody String refreshToken) {
         return ResponseEntity.ok(tokenService.renovarTokens(refreshToken));
     }
+
+    @PostMapping("/registrar")
+    public ResponseEntity<Void> registrar(@RequestBody @Valid UsuarioDto usuarioDto) {
+        usuarioService.cadastrar(usuarioDto);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

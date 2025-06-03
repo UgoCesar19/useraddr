@@ -52,7 +52,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req -> {
-                    req.requestMatchers("/public/**", "/autenticar", "/atualizar-autenticacao").permitAll();
+                    req.requestMatchers("/registrar", "/autenticar", "/atualizar-autenticacao").permitAll();
                     req.anyRequest().authenticated();
                 })
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
