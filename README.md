@@ -8,6 +8,8 @@ It provides RESTful APIs for:
 - Address management
 - Authentication and authorization
 
+This APIs are used in [this](https://github.com/UgoCesar19/usuaddr-front) Angular application.
+
 ---
 
 ## Technologies Used
@@ -26,7 +28,7 @@ It provides RESTful APIs for:
 
 - Java 17 or higher
 - Maven
-- Optional: Oracle database (for production profile)
+- Optional: PostgreSQL (for production profile)
 
 ---
 
